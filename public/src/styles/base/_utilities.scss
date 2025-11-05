@@ -1,0 +1,199 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/vars' as *;
+
+.max-width {
+	@include max-width;
+}
+
+.bg-full {
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat
+}
+
+.content {
+
+	a:not(.button),
+	a strong {
+		text-decoration: underline;
+
+		&:visited {
+			color: initial;
+		}
+	}
+
+	img {
+		width: auto;
+		object-fit: contain;
+		margin: auto;
+	}
+
+
+	p {
+		display: block;
+		margin-block-start: 1rem;
+		margin-block-end: 1rem;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: 400;
+	}
+
+
+	h1 {
+		display: block;
+		margin-block-start: 0.67em;
+		margin-block-end: 0.67em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+		line-height: 2.13rem;
+	}
+
+	h2 {
+		display: block;
+		margin-block-start: 0.83em;
+		margin-block-end: 0.83em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+
+	h3 {
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+
+	h4 {
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+
+	h5 {
+		display: block;
+		margin-block-start: 1.67em;
+		margin-block-end: 1.67em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+
+	h6 {
+		display: block;
+		margin-block-start: 2.33em;
+		margin-block-end: 2.33em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+
+	ol {
+		display: block;
+
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 40px;
+
+		li {
+			list-style: decimal;
+		}
+	}
+
+	ul {
+		display: block;
+		list-style-type: disc;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 15px;
+	}
+
+	li {
+		list-style: initial;
+		padding: .5rem 0;
+		font-weight: 400;
+		display: list-item;
+	}
+
+	b,
+	strong {
+		font-weight: bold;
+	}
+}
+
+.g-swiper {
+	overflow-x: hidden;
+	position: relative;
+	padding-bottom: 4rem;
+
+	.swiper {
+		&-slide {
+			height: auto;
+
+			>* {
+				height: 100%;
+			}
+		}
+
+		&-button {
+
+			&-next,
+			&-prev {
+				width: 40px;
+				height: 40px;
+				display: grid;
+				place-items: center;
+				border-radius: 50%;
+
+				&::after {
+
+					font-size: 2rem;
+					font-weight: 800;
+					opacity: 1;
+				}
+
+
+			}
+
+			&-disabled {
+				display: none;
+			}
+
+			&-prev {
+				left: 0;
+			}
+
+			&-next {
+				right: 0;
+			}
+		}
+
+		&-pagination {
+			&-bullet {
+				width: 1.2rem;
+				height: 1.2rem;
+
+				opacity: 1;
+
+				&-active {}
+			}
+
+			&-block {
+				display: block;
+			}
+		}
+
+	}
+}

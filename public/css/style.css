@@ -1,0 +1,343 @@
+@import "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap";
+@import "https://fonts.cdnfonts.com/css/verdana-pro-cond";
+
+/* public/src/styles/style.scss */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+html {
+  scroll-behavior: smooth;
+}
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  margin: 0;
+  object-fit: cover;
+  object-position: center center;
+}
+figure img {
+  height: 100%;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+p a {
+  display: inline;
+}
+ul {
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=checkbox] {
+  cursor: pointer;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  width: 14px;
+  height: 14px;
+  appearance: none;
+  border-radius: 3px;
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+textarea {
+  white-space: pre-wrap;
+}
+::placeholder {
+  color: unset;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+svg {
+  width: 100%;
+  display: block;
+}
+body {
+  min-height: 100vh;
+  font-size: 1.4rem;
+  overflow-x: hidden;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+}
+body.hidden {
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  #page {
+    overflow: hidden;
+  }
+}
+.max-width {
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+@media (min-width: 481px) {
+  .max-width {
+    max-width: calc(100vw - 80px);
+  }
+}
+@media (min-width: 993px) {
+  .max-width {
+    max-width: calc(100vw - 100px);
+  }
+}
+@media (min-width: 1441px) {
+  .max-width {
+    max-width: 140rem;
+  }
+}
+@media (min-width: 1801px) {
+  .max-width {
+    max-width: 164rem;
+  }
+}
+@media (min-width: 2301px) {
+  .max-width {
+    max-width: 184rem;
+  }
+}
+.bg-full {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.content a:not(.button),
+.content a strong {
+  text-decoration: underline;
+}
+.content a:not(.button):visited,
+.content a strong:visited {
+  color: initial;
+}
+.content img {
+  width: auto;
+  object-fit: contain;
+  margin: auto;
+}
+.content p {
+  display: block;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 400;
+}
+.content h1 {
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  line-height: 2.13rem;
+}
+.content h2 {
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.content h3 {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.content h4 {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.content h5 {
+  display: block;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.content h6 {
+  display: block;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.content ol {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.content ol li {
+  list-style: decimal;
+}
+.content ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 15px;
+}
+.content li {
+  list-style: initial;
+  padding: 0.5rem 0;
+  font-weight: 400;
+  display: list-item;
+}
+.content b,
+.content strong {
+  font-weight: bold;
+}
+.g-swiper {
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: 4rem;
+}
+.g-swiper .swiper-slide {
+  height: auto;
+}
+.g-swiper .swiper-slide > * {
+  height: 100%;
+}
+.g-swiper .swiper-button-next,
+.g-swiper .swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.g-swiper .swiper-button-next::after,
+.g-swiper .swiper-button-prev::after {
+  font-size: 2rem;
+  font-weight: 800;
+  opacity: 1;
+}
+.g-swiper .swiper-button-disabled {
+  display: none;
+}
+.g-swiper .swiper-button-prev {
+  left: 0;
+}
+.g-swiper .swiper-button-next {
+  right: 0;
+}
+.g-swiper .swiper-pagination-bullet {
+  width: 1.2rem;
+  height: 1.2rem;
+  opacity: 1;
+}
+.g-swiper .swiper-pagination-block {
+  display: block;
+}
+body {
+  background-color: red;
+}
+/*# sourceMappingURL=app.css.map */
