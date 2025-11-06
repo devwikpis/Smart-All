@@ -1,2 +1,207 @@
 @use '../abstracts/mixins' as *;
-@use '../abstracts/vars' as *;
+
+.header {
+    position: relative;
+    z-index: 100;
+    padding: 10px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: 0px 5.35px 28.21px 0px #00000078;
+
+    &--home {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+    }
+
+    @include desktop {
+        padding: 20px 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .custom-logo-link {
+        max-width: 200px;
+        position: relative;
+        z-index: 102;
+
+        @include desktop {
+            max-width: 270px;
+        }
+
+        img {
+            max-height: 65px;
+            object-fit: contain;
+
+            @include desktop {
+                max-width: auto;
+            }
+        }
+    }
+
+    &__toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 102;
+        position: relative;
+
+        @include desktop {
+            display: none;
+        }
+
+        &-line {
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        &.active {
+            .header__toggle-line {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(8px, 8px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(7px, -7px);
+                }
+            }
+        }
+    }
+
+    // Navegación
+    &__nav {
+
+        // Desktop
+        &--desktop {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                gap: 15px;
+
+                @include table {
+                    gap: 40px;
+                }
+
+                @include desktop {
+                    gap: 50px;
+                }
+
+                a {
+                    color: var(--color-white);
+                    text-decoration: none;
+                    transition: color .3s ease;
+                    font-weight: 400;
+
+                    &[aria-current="page"],
+                    &:hover {
+                        font-weight: 500;
+                        color: var(--color-mind-aqua);
+                    }
+                }
+            }
+        }
+
+        // Mobile
+        &--mobile {
+            position: fixed;
+
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--color-black);
+            padding: 20px 30px 30px;
+            transition: right 0.4s ease;
+            z-index: 101;
+            overflow-y: auto;
+
+            @include desktop {
+                display: none;
+            }
+
+            &.active {
+                right: 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+
+                li {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+                    &:first-child {
+                        border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+                }
+
+                a {
+                    color: var(--color-white);
+                    text-decoration: none;
+                    display: block;
+                    padding: 20px 0;
+                    font-size: 1.125rem;
+                    transition: color 0.3s ease;
+                    text-align: right;
+
+                    &:hover,
+                    &.current-menu-item {
+                        color: var(--color-green-neon);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Overlay para cerrar el menú
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 99;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}

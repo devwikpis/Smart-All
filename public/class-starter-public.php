@@ -12,14 +12,32 @@ class Starter_Public
 
     public function enqueue_styles()
     {
-
         wp_enqueue_style(
-            'public-css',
-            STARTER_DIR_URI . 'public/css/style.css',
+            'poppins-font',
+            STARTER_DIR_URI . 'assets/fonts/poppins/poppins.css',
             array(),
             $this->version,
             'all'
         );
+
+        wp_enqueue_style(
+            'public-css',
+            STARTER_DIR_URI . 'public/css/style.css',
+            array('poppins-font'),
+            $this->version,
+            'all'
+        );
+
+        // Encolar estilos de home solo en la front-page
+        if (is_front_page()) {
+            wp_enqueue_style(
+                'home-css',
+                STARTER_DIR_URI . 'public/css/home.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
     }
 
 
@@ -51,10 +69,7 @@ class Starter_Public
     public function starter_menus_frontend()
     {
         register_nav_menus([
-            'menu-1'        => __('Primary Menu', $this->theme_name),
-            'menu_header'   => __('Header Menu', $this->theme_name),
-            'footer_menu_1' => __('Footer Menu 1', $this->theme_name),
-            'footer_menu_2' => __('Footer Menu 2', $this->theme_name),
+            'menu_primary'   => __('Primary Menu', $this->theme_name),
         ]);
 
         $logo = [

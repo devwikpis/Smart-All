@@ -73,15 +73,62 @@ const buildOptions = {
   write: false, // Necesario para acceder a outputFiles
 };
 
+// Configuración para home.scss
+const homeStylesOptions = {
+  entryPoints: ["public/src/styles/home.scss"],
+  bundle: true,
+  outfile: "public/css/home.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-home-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile("public/css/home.css", cssFile.contents);
+              console.log("✅ public/css/home.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/home.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
 // Función de build
 async function build() {
   try {
     if (isWatch) {
       const ctx = await esbuild.context(buildOptions);
+      const homeCtx = await esbuild.context(homeStylesOptions);
       await ctx.watch();
-      console.log("👀 Vigilando cambios...");
+      await homeCtx.watch();
+      console.log("👀 Vigilando cambios en app.ts y home.scss...");
     } else {
       await esbuild.build(buildOptions);
+      await esbuild.build(homeStylesOptions);
       console.log("✅ Build completado");
     }
   } catch (error) {

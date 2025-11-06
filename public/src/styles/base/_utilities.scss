@@ -13,6 +13,78 @@
 	background-repeat: no-repeat
 }
 
+.h1 {
+	font-size: 2.5rem;
+	font-weight: 600;
+
+	@include desktop {
+		font-size: 4.44rem;
+	}
+
+	@include table {
+		font-size: 3.44rem;
+	}
+
+	&--top {
+		font-size: 1.75rem;
+
+		@include table {
+			font-size: 2.13rem;
+		}
+
+		@include desktop {
+			font-size: 2.5rem;
+		}
+	}
+
+	&--bottom {
+		font-size: 1.13rem;
+		font-weight: 300;
+
+		@include table {
+			font-size: 1.38rem;
+		}
+
+		@include desktop {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.button {
+	width: fit-content;
+	padding: 10px 18px;
+	border-radius: 7px;
+	font-weight: 700;
+
+	border: 1px solid transparent;
+	transition: all .3s ease-in-out;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	&--br-white {
+		border-color: var(--color-white);
+		color: var(--color-white);
+
+		&:hover {
+			background-color: var(--color-aqua);
+			color: var(--color-white);
+			border-color: var(--color-aqua);
+		}
+	}
+
+	&--aqua {
+		background-color: var(--color-aqua);
+		color: var(--color-white);
+
+		&:hover {
+			background-color: var(--color-white);
+			color: var(--color-aqua);
+		}
+	}
+}
+
 .content {
 
 	a:not(.button),

@@ -1,5 +1,16 @@
 @use '../abstracts/vars' as *;
 @use '../abstracts/mixins' as *;
+
+:root {
+	--color-black: #222322;
+	--color-white: #fff;
+	--color-gray: #F5F5F5;
+	--color-aqua: #026874;
+	--color-light-aqua: #AFE3E9;
+	--color-mind-aqua: #86B2B7;
+	--font-poppins: 'Poppins', sans-serif;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	* {
 		animation: none !important;
@@ -171,12 +182,14 @@ svg {
 
 body {
 	min-height: 100vh;
-	font-size: 1.4rem;
+	font-size: 1rem;
 	overflow-x: hidden;
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: white;
+	color: var(--color-black);
+	font-family: var(--font-poppins);
 
 	&.hidden {
 		overflow: hidden;

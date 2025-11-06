@@ -17,6 +17,37 @@ class Starter_Admin
     {
         $this->theme_name = $theme_name;
         $this->version = $version;
+        $this->init_options_pages();
+    }
+
+    /**
+     * Inicializa la configuración de las páginas de opciones
+     */
+    private function init_options_pages()
+    {
+        $this->options_pages = [
+            'main' => [
+                'page_title' => __('Theme Options', 'starter'),
+                'menu_title' => __('Theme Options', 'starter'),
+                'menu_slug'  => 'theme-options',
+                'capability' => 'edit_posts',
+                'redirect'   => false,
+                'icon_url'   => 'dashicons-admin-generic',
+                'position'   => 60
+            ],
+            'header' => [
+                'page_title' => __('Header Options', 'starter'),
+                'menu_title' => __('Header', 'starter'),
+                'menu_slug'  => 'theme-options-header',
+                'capability' => 'edit_posts'
+            ],
+            'footer' => [
+                'page_title' => __('Footer Options', 'starter'),
+                'menu_title' => __('Footer', 'starter'),
+                'menu_slug'  => 'theme-options-footer',
+                'capability' => 'edit_posts'
+            ]
+        ];
     }
 
 

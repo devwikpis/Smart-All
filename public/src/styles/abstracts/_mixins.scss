@@ -12,11 +12,11 @@
     }
 
     @media (min-width: 1441px) {
-        max-width: 140rem;
+        max-width: 94rem;
     }
 
     @media (min-width: 1801px) {
-        max-width: 164rem;
+        max-width: 104rem;
     }
 
     @media (min-width: 2301px) {
@@ -115,4 +115,12 @@
             object-position: center;
         }
     }
+}
+
+@mixin flex($direction: row, $justify-content: flex-start, $align-items: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
 }
