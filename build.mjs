@@ -117,18 +117,65 @@ const homeStylesOptions = {
   write: false,
 };
 
+// Configuración para services.scss
+const servicesStylesOptions = {
+  entryPoints: ["public/src/styles/services.scss"],
+  bundle: true,
+  outfile: "public/css/services.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-services-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile("public/css/services.css", cssFile.contents);
+              console.log("✅ public/css/services.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/services.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
 // Función de build
 async function build() {
   try {
     if (isWatch) {
       const ctx = await esbuild.context(buildOptions);
       const homeCtx = await esbuild.context(homeStylesOptions);
+      const servicesCtx = await esbuild.context(servicesStylesOptions);
       await ctx.watch();
       await homeCtx.watch();
-      console.log("👀 Vigilando cambios en app.ts y home.scss...");
+      await servicesCtx.watch();
+      console.log("👀 Vigilando cambios en app.ts, home.scss y services.scss...");
     } else {
       await esbuild.build(buildOptions);
       await esbuild.build(homeStylesOptions);
+      await esbuild.build(servicesStylesOptions);
       console.log("✅ Build completado");
     }
   } catch (error) {

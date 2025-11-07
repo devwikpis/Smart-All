@@ -8,7 +8,7 @@ import "../styles/style.scss";
 
 // Import components
 import { MobileMenu, DropdownMenu, Accessibility } from "./components";
-
+import "./components/Swipers";
 /**
  * Initialize application
  */

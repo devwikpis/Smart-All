@@ -38,6 +38,17 @@ class Starter_Public
                 'all'
             );
         }
+
+        // Encolar estilos de services solo en el template de servicios
+        if (is_page_template('templates/services.php')) {
+            wp_enqueue_style(
+                'services-css',
+                STARTER_DIR_URI . 'public/css/services.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
     }
 
 

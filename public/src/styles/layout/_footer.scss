@@ -1,2 +1,85 @@
 @use '../abstracts/mixins' as *;
-@use '../abstracts/vars' as *;
+
+.footer {
+    padding: 60px 0;
+    background-color: var(--color-black);
+
+    &__wrapper {
+        @include flex(column, center, center, 0px);
+        color: white;
+    }
+
+    &__logo {
+        width: 200px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    &__nav ul {
+        margin: 20px auto;
+        @include flex(row, center, center, 0);
+        flex-wrap: wrap;
+
+        li {
+            padding: 5px 10px;
+        }
+
+        a {
+
+            &[aria-current="page"],
+            &:hover {
+                font-weight: 500;
+                color: var(--color-mind-aqua);
+            }
+        }
+    }
+
+    &__contact {
+        width: 100%;
+        margin: 20px auto;
+        padding-bottom: 20px;
+        position: relative;
+        @include flex(column, center, center, 20px);
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            max-width: 450px;
+            height: 1px;
+            background-color: var(--color-white);
+        }
+
+        &--li {
+
+            a {
+                display: grid;
+                grid-template-columns: 30px 1fr;
+                align-items: center;
+                transition: all .3s ease;
+
+                &:hover {
+                    font-weight: 500;
+                    color: var(--color-mind-aqua);
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        &--li {
+            transition: all .3s ease;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,48 @@
+@use '../../../abstracts/mixins' as *;
+
+.proyects {
+    padding: 60px 0;
+
+    &__texts {
+        margin-bottom: 40px;
+        @include flex(column, center, center, 15px);
+        text-align: center;
+    }
+
+    &__card {
+        border-radius: 7px;
+        background-color: var(--color-gray);
+
+        &--figure {
+            position: relative;
+            height: 210px;
+            margin-bottom: 15px;
+
+            img {
+                height: 100%;
+                border-radius: 7px;
+                object-fit: cover;
+            }
+        }
+
+        &--taxonomy {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--color-white);
+            background-color: var(--color-aqua);
+            padding: 3px 10px;
+            border-radius: 11px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+
+        }
+
+        &--texts {
+            padding: 0 20px 20px;
+            @include flex(column, center, start, 10px);
+            text-align: start;
+        }
+    }
+}

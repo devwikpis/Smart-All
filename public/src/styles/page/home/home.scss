@@ -1,1 +1,7 @@
 @use './components/banner' as *;
+@use './components/services' as *;
+@use './components/about' as *;
+@use './components/proyects' as *;
+@use './components/suppliers' as *;
+@forward '../../components/testimonials';
+@forward '../../components/section-banner';

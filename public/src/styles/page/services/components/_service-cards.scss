@@ -1,0 +1,63 @@
+@use '../../../abstracts/mixins' as *;
+
+.service-cards {
+    padding: 60px 0;
+    background-color: var(--color-gray);
+
+    &--reverse {
+        background-color: var(--color-white);
+
+        @include table {
+            .service-cards {
+                &__wrapper {
+                    grid-template-columns: 35% 1fr;
+
+                }
+
+                &__texts {
+                    order: 2;
+                }
+
+                .service-cards__image {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 30px;
+
+        @include table {
+            grid-template-columns: 1fr 35%;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+
+    .service-cards__texts {
+
+        h2.h2.service-cards__h2 {}
+
+        p.p.service-cards__p {}
+
+
+    }
+
+    &__cta {
+        margin-top: 20px;
+    }
+
+    &__image {
+        min-height: 270px;
+
+        @include table {
+            @include bg-figure;
+        }
+
+        img {
+            border-radius: 7px;
+        }
+    }
+}

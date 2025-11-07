@@ -1,0 +1,105 @@
+@use '../../../abstracts/mixins' as *;
+
+.about {
+
+    background-color: var(--color-black);
+
+    @include table {
+        position: relative;
+    }
+
+    &__wrapper {
+        color: white;
+
+        @include table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        padding: 60px 0 0;
+        @include flex(column, flex-start, start, 20px);
+
+        @include table {
+            padding: 60px 60px 60px 0px;
+        }
+    }
+
+    &__texts {
+
+        h2.h2.about__h2 {}
+
+        p.p.about__p {}
+    }
+
+    &__list {
+        display: grid;
+        gap: 20px;
+
+        li.about__item {
+
+            .about__card {
+
+                span.about__icon {}
+
+                h3.h3.about__h3 {}
+            }
+        }
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 10px;
+        align-items: center;
+
+        &--number {
+            font-size: 85px;
+            font-weight: 600;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.17);
+            color: transparent;
+        }
+
+        &--texts {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+
+    a.button.button--aqua.about__cta {}
+
+    &__image {
+
+        width: 100%;
+        height: 100%;
+
+        &--lines {
+            position: absolute;
+            width: 400px;
+            z-index: 1;
+
+            &--top {
+                top: 0;
+                left: 50%;
+            }
+
+            &--bottom {
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        &--img {
+            @include table {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 50%;
+                height: 100%;
+            }
+        }
+    }
+}

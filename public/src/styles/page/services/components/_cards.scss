@@ -1,0 +1,10 @@
+@use '../../../abstracts/mixins' as *;
+
+.services {
+    padding: 60px 0;
+
+    &__wrapper {
+        text-align: center;
+        @include flex(column, center, center, 10px)
+    }
+}

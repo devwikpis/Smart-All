@@ -1,0 +1,85 @@
+@use '../abstracts/mixins' as *;
+
+.testimonials {
+    padding: 60px 0;
+    background: #ffffff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 27%, rgba(3, 101, 113, 1) 76%, rgba(6, 95, 105, 1) 93%, rgba(9, 89, 98, 1) 100%);
+
+    @include table {
+        padding: 80px 0;
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 30px;
+
+        @include table {
+            gap: 60px;
+            grid-template-columns: .4fr 1fr;
+            align-items: center;
+        }
+
+    }
+
+    &__texts {
+        position: relative;
+
+        &--content {
+            position: relative;
+            z-index: 1;
+
+            @include table {
+                max-width: 400px;
+            }
+        }
+    }
+
+    &__h2 {
+        max-width: 270px;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &__card {
+        padding: 20px;
+        border-radius: 7px;
+        background-color: white;
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+        &--top {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 20px;
+            align-items: center;
+
+
+        }
+
+        &--img {
+            width: 70px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .testimonials__card--texts {
+
+            h3.h3.testimonials__card--h3 {}
+
+            p.p.testimonials__card--p {}
+        }
+
+        .testimonials__card--bottom {}
+    }
+
+    &__inner-arrows {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+    }
+}
