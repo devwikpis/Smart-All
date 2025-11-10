@@ -4,7 +4,7 @@
  * Template Name: Front Page
  * Description: Página de inicio personalizada para el sitio del Tecnológico de Antioquia
  * 
- * @package TdeA_Theme
+ * @package starter_Theme
  * @author Wikpis
  * @version 1.0.0
  */

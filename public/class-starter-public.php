@@ -49,6 +49,17 @@ class Starter_Public
                 'all'
             );
         }
+
+        // Encolar estilos de single-service solo en el single de servicio
+        if (is_singular('servicio')) {
+            wp_enqueue_style(
+                'single-service-css',
+                STARTER_DIR_URI . 'public/css/single-service.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
     }
 
 

@@ -1,0 +1,52 @@
+@use '../../../abstracts/mixins' as *;
+
+.info-service {
+    padding: 60px 0;
+
+    &__wrapper {
+        @include flex(column, center, center, 30px);
+
+        @include table {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+    }
+
+    &__texts {
+        @include table {
+            padding: 40px 0;
+        }
+    }
+
+    &__h1 {}
+
+    &__content {}
+
+    &__figure {
+
+
+        @include table {
+            @include bg-figure
+        }
+
+        img {
+
+            border-radius: 8px;
+        }
+    }
+
+    &__slide {
+        margin-top: 20px;
+
+        &--figure {
+            @include flex(column, center, flex-start, 10px);
+
+            img {
+                border-radius: 7px;
+                height: 230px;
+            }
+        }
+    }
+}

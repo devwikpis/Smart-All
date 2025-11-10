@@ -1,4 +1,4 @@
-# Tema WordPress - Tecnológico de Antioquia (TdeA)
+# Tema WordPress - Tecnológico de Antioquia (starter)
 
 ## Descripción 📄
 Tema oficial para el sitio web institucional del Tecnológico de Antioquia, desarrollado con estándares de accesibilidad y rendimiento.
@@ -13,20 +13,20 @@ Tema oficial para el sitio web institucional del Tecnológico de Antioquia, desa
 
 ### 📂 Directorio Principal
 ```bash
-TdeA/  
+starter/  
 ├── admin/ # Funcionalidades del área administrativa  
-│ └── class-tdea-admin.php # Clase principal de administración  
+│ └── class-starter-admin.php # Clase principal de administración  
 ├── css/ # Hojas de estilo CSS (generadas)  
 ├── js/ # JavaScript compilado  
 ├── inc/ # Componentes del núcleo del tema  
-│ ├── class-tdea-ajax-handler.php # Manejo de peticiones AJAX  
-│ ├── class-tdea-master.php # Clase principal  
-│ └── class-tdea-hooks-manager.php # Gestión de hooks  
+│ ├── class-starter-ajax-handler.php # Manejo de peticiones AJAX  
+│ ├── class-starter-master.php # Clase principal  
+│ └── class-starter-hooks-manager.php # Gestión de hooks  
 ├── includes/ # Funcionalidades adicionales  
-│ ├── class-tdea-renderer.php # Renderizado de componentes  
-│ └── class-tdea-shortcodes.php # Shortcodes personalizados  
+│ ├── class-starter-renderer.php # Renderizado de componentes  
+│ └── class-starter-shortcodes.php # Shortcodes personalizados  
 ├── public/ # Funcionalidades frontend  
-│ └── class-tdeapublic.php # Clase principal del frontend  
+│ └── class-starterpublic.php # Clase principal del frontend  
 ├── src/ # Código fuente (SCSS/JS)  
 ├── template-parts/ # Componentes reutilizables  
 ├── templates/ # Plantillas personalizadas
@@ -86,10 +86,10 @@ pnpm build
     
 -   ✔️ Semántica HTML5
     
--   ✔️ TDEAibutos ARIA
+-   ✔️ starteributos ARIA
 
 ```html
-<img src="logo.jpg" alt="TdeA - Educación superior" width="200">
+<img src="logo.jpg" alt="starter - Educación superior" width="200">
 ```
 ## 📚 Recursos oficiales
 
@@ -102,4 +102,4 @@ pnpm build
 
 ## 📝 Licencia
 
-GNU GPL v3.0 ©  [Tecnológico de Antioquia](https://tdea.edu.co/)
+GNU GPL v3.0 ©  [Tecnológico de Antioquia](https://starter.edu.co/)

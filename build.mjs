@@ -161,6 +161,50 @@ const servicesStylesOptions = {
   write: false,
 };
 
+// Configuración para single-service.scss
+const singleServiceStylesOptions = {
+  entryPoints: ["public/src/styles/single-service.scss"],
+  bundle: true,
+  outfile: "public/css/single-service.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-single-service-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile("public/css/single-service.css", cssFile.contents);
+              console.log("✅ public/css/single-service.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/single-service.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
 // Función de build
 async function build() {
   try {
@@ -168,14 +212,17 @@ async function build() {
       const ctx = await esbuild.context(buildOptions);
       const homeCtx = await esbuild.context(homeStylesOptions);
       const servicesCtx = await esbuild.context(servicesStylesOptions);
+      const singleServiceCtx = await esbuild.context(singleServiceStylesOptions);
       await ctx.watch();
       await homeCtx.watch();
       await servicesCtx.watch();
-      console.log("👀 Vigilando cambios en app.ts, home.scss y services.scss...");
+      await singleServiceCtx.watch();
+      console.log("👀 Vigilando cambios en app.ts, home.scss, services.scss y single-service.scss...");
     } else {
       await esbuild.build(buildOptions);
       await esbuild.build(homeStylesOptions);
       await esbuild.build(servicesStylesOptions);
+      await esbuild.build(singleServiceStylesOptions);
       console.log("✅ Build completado");
     }
   } catch (error) {

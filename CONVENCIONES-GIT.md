@@ -1,4 +1,4 @@
-# **Convenciones para el Manejo de Git en el Proyecto TDEA**
+# **Convenciones para el Manejo de Git en el Proyecto starter**
 
 ## **📌 1. Estructura de Ramas (Branching Strategy)**
 

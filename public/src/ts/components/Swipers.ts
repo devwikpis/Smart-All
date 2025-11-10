@@ -84,3 +84,15 @@ const swiperSuppliers = new Swiper(".swiper-suppliers", {
     },
   },
 });
+const swiperSlide = new Swiper(".swiper-service", {
+  spaceBetween: 30,
+  autoplay: true,
+  breakpoints: {
+    375: {
+      slidesPerView: 1,
+    },
+    667: {
+      slidesPerView: 2,
+    },
+  },
+});
