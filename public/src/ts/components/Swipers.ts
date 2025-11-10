@@ -84,7 +84,7 @@ const swiperSuppliers = new Swiper(".swiper-suppliers", {
     },
   },
 });
-const swiperSlide = new Swiper(".swiper-service", {
+const swiperService = new Swiper(".swiper-service", {
   spaceBetween: 30,
   autoplay: true,
   breakpoints: {
@@ -94,5 +94,65 @@ const swiperSlide = new Swiper(".swiper-service", {
     667: {
       slidesPerView: 2,
     },
+  },
+});
+const swiperProyect = new Swiper(".swiper-proyect", {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+    renderFraction: function (currentClass, totalClass) {
+      return '<span class="' + currentClass + '"></span>';
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+const swiperValues = new Swiper(".swiper-values", {
+  spaceBetween: 30,
+
+  breakpoints: {
+    375: {
+      slidesPerView: 1,
+    },
+    667: {
+      slidesPerView: 2,
+    },
+    940: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+});
+
+const swiperTeam = new Swiper(".swiper-team", {
+  spaceBetween: 30,
+
+  breakpoints: {
+    375: {
+      slidesPerView: 1,
+    },
+    667: {
+      slidesPerView: 2,
+    },
+    940: {
+      slidesPerView: 3,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
   },
 });

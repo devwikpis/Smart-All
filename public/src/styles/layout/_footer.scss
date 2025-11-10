@@ -3,6 +3,7 @@
 .footer {
     padding: 60px 0;
     background-color: var(--color-black);
+    border-top: 4px solid var(--color-aqua);
 
     &__wrapper {
         @include flex(column, center, center, 0px);

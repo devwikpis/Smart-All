@@ -2,7 +2,7 @@
 
 /**
  * Template Name: Servicios
- * Description: Página de servicios personalizada para el sitio del Tecnológico de Antioquia
+ * Description: Página de servicios personalizada para el sitio web
  * 
  * @package starter_Theme
  * @author Wikpis

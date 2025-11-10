@@ -1,0 +1,41 @@
+@use '../../../abstracts/mixins' as *;
+
+.about-top {
+    padding: 60px 0;
+
+    &__wrapper {}
+
+    &__header {
+        @include flex(column, center, center, 10px);
+        text-align: center;
+    }
+
+    &__h2 {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    &__content {
+        display: grid;
+        gap: 20px;
+        margin-top: 30px;
+
+        @include table {
+            grid-template-columns: 40% 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+
+    &__figure {
+        height: 350px;
+
+        @include table {
+            @include bg-figure;
+        }
+
+        img {
+            border-radius: 7px;
+        }
+    }
+}

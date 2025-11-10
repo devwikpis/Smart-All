@@ -1,0 +1,244 @@
+/* public/src/styles/about.scss */
+.about-top {
+  padding: 60px 0;
+}
+.about-top__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.about-top__h2 {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.about-top__content {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .about-top__content {
+    grid-template-columns: 40% 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+}
+.about-top__figure {
+  height: 350px;
+}
+@media screen and (min-width: 768px) {
+  .about-top__figure {
+    position: relative;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .about-top__figure img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+  }
+}
+.about-top__figure img {
+  border-radius: 7px;
+}
+.timeline {
+  padding: 60px 0;
+}
+.timeline__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.timeline__list {
+  position: relative;
+  max-width: 1240px;
+  margin: 30px auto 0;
+  padding: 30px 0;
+  display: grid;
+  row-gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .timeline__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.timeline__list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-aqua);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+@media screen and (min-width: 768px) {
+  .timeline__list::before {
+    left: calc(50% - 0.5px);
+  }
+}
+.timeline__item {
+  padding: 0 0 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .timeline__item {
+    padding: 0 60px;
+  }
+}
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-aqua);
+  border-radius: 50%;
+  border: 3px solid white;
+  left: -8px;
+}
+@media screen and (min-width: 768px) {
+  .timeline__item--left {
+    grid-column: 1;
+    text-align: end;
+  }
+  .timeline__item--left::before {
+    left: calc(100% - 9px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .timeline__item--right {
+    grid-column: 2;
+  }
+  .timeline__item--right::before {
+    left: -9px;
+  }
+}
+.timeline__content {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  background-color: var(--color-white);
+  border-radius: 7px;
+}
+.timeline__span {
+  color: var(--color-aqua);
+}
+.values {
+  padding: 60px 0;
+}
+.values__texts {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.values__card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 7px;
+  text-align: center;
+  background-color: var(--color-gray);
+}
+.values__icon {
+  margin-bottom: 20px;
+}
+.values__h3 {
+  font-weight: 500;
+}
+.values__cta {
+  margin: 30px auto 0;
+}
+.team {
+  padding: 60px 0;
+}
+.team__header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.team__card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 7px;
+  text-align: center;
+  background-color: var(--color-gray);
+}
+.team__icon {
+  margin-bottom: 20px;
+}
+.team__figure img {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.team__h3 {
+  font-weight: 500;
+}
+.team__span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.team__texts--p {
+  font-size: 14px;
+}
+.section-banner {
+  padding: 60px 0;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .section-banner {
+    padding: 80px 0;
+  }
+}
+.section-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      #222322 9.13%,
+      rgba(0, 0, 0, 0) 83%);
+}
+.section-banner__wrapper {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.section-banner__texts {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+}
+/*# sourceMappingURL=about.css.map */

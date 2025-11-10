@@ -60,6 +60,39 @@ class Starter_Public
                 'all'
             );
         }
+
+        // Encolar estilos de proyects solo en el template de proyectos
+        if (is_page_template('templates/proyects.php')) {
+            wp_enqueue_style(
+                'proyects-css',
+                STARTER_DIR_URI . 'public/css/proyects.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
+
+        // Encolar estilos de about solo en el template de about
+        if (is_page_template('templates/about.php')) {
+            wp_enqueue_style(
+                'about-css',
+                STARTER_DIR_URI . 'public/css/about.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
+
+        // Encolar estilos de contact solo en el template de contact
+        if (is_page_template('templates/contact.php')) {
+            wp_enqueue_style(
+                'contact-css',
+                STARTER_DIR_URI . 'public/css/contact.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
     }
 
 

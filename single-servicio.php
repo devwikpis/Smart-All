@@ -83,10 +83,43 @@ get_header();
         </div>
     <?php }
     get_template_part('template-parts/testimonials');
-    $faqs = get_field('faqs');
-    if ($faqs) {
-        get_template_part('template-parts/block-faqs', null, ['acf' => $faqs]);
-    } ?>
+    $service_faqs = get_field('faqs')['faqs'];
+    if ($service_faqs) {
+        get_template_part('template-parts/block-faqs', null, ['acf' => $service_faqs]);
+    }
+
+    $contact_form = get_field('contact');
+    if ($contact_form) {
+    ?>
+        <section class="contact-form">
+            <div class="contact-form__wrapper max-width">
+                <div class="contact-form__texts">
+                    <div class="contact-form__header">
+                        <h2 class="h2 contact-form__h2"><?php echo $contact_form['title'] ?></h2>
+                        <p class="p contact-form__p"><?php echo $contact_form['description'] ?></p>
+                    </div>
+                    <div class="contact-form__content">
+                        <?php echo do_shortcode($contact_form['shortcode']) ?>
+                    </div>
+                </div>
+                <figure class="contact-form__figure">
+                    <?php
+                    if (is_numeric($contact_form['image'])) {
+                        $image_id = $contact_form['image'];
+                        $image = [
+                            'url' => wp_get_attachment_image_url($image_id, 'full'),
+                            'alt' => get_post_meta($image_id, '_wp_attachment_image_alt', true),
+                            'title' => get_the_title($image_id)
+                        ];
+                    } else {
+                        $image = $contact_form['image'];
+                    }
+                    echo process_image($image); ?>
+                </figure>
+            </div>
+        </section>
+    <?php }
+    ?>
 </main>
 
 <?php get_footer(); ?>

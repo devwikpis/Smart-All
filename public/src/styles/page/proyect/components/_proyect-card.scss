@@ -1,0 +1,123 @@
+@use '../../../abstracts/mixins' as *;
+
+.proyect-card {
+    padding: 60px 0;
+    background-color: var(--color-white);
+
+    &--reverse {
+        background-color: var(--color-gray);
+
+        @include table {
+            .proyect-card {
+                &__wrapper {}
+
+                &__container {}
+
+                &__top {
+                    order: 2;
+                }
+
+                &__image {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    &__wrapper {}
+
+    &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
+
+        @include table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+
+    &__top {
+        @include table {
+            padding: 10px 0;
+        }
+    }
+
+    &__h3 {
+        margin-top: 20px;
+    }
+
+    &__content {}
+
+    &__image {
+
+        @include table {
+            @include bg-figure;
+        }
+
+        img {
+            border-radius: 7px;
+        }
+    }
+
+    &__gallery {
+        margin-top: 40px;
+    }
+
+    &__slide--figure {
+        width: 100%;
+        height: 400px !important;
+        overflow: hidden;
+        border-radius: 7px;
+
+        @include table {
+            height: 380px !important;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        gap: 10px;
+
+        * {
+            position: initial;
+        }
+
+        .swiper {
+            &-pagination {
+                width: fit-content;
+
+                &-current {
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+            }
+
+            &-button {
+
+                &-prev,
+                &-next {
+                    margin: 0;
+                    height: auto;
+                    color: var(--color-black);
+
+                    &::after {
+                        font-size: 18px;
+
+                    }
+                }
+            }
+        }
+    }
+}

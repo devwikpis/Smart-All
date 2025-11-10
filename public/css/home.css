@@ -126,19 +126,19 @@
   display: grid;
   gap: 20px;
 }
-.about__card {
+description .about__card {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 10px;
   align-items: center;
 }
-.about__card--number {
+description .about__card--number {
   font-size: 85px;
   font-weight: 600;
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.17);
   color: transparent;
 }
-.about__card--texts {
+description .about__card--texts {
   display: flex;
   flex-direction: column;
 }

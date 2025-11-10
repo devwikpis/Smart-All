@@ -1,0 +1,38 @@
+@use '../../../abstracts/mixins' as *;
+
+.values {
+
+    padding: 60px 0;
+
+    &__wrapper {}
+
+    &__texts {
+        margin-bottom: 30px;
+        @include flex(column, center, center, 10px);
+        text-align: center;
+    }
+
+    &__h2 {}
+
+    &__p {}
+
+    &__card {
+        padding: 20px;
+        @include flex(column, center, center, 10px);
+        border-radius: 7px;
+        text-align: center;
+        background-color: var(--color-gray);
+    }
+
+    &__icon {
+        margin-bottom: 20px;
+    }
+
+    &__h3 {
+        font-weight: 500;
+    }
+
+    &__cta {
+        margin: 30px auto 0;
+    }
+}

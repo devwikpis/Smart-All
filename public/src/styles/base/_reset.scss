@@ -131,6 +131,31 @@ label {
 	cursor: pointer;
 }
 
+select,
+textarea,
+input {
+	width: -webkit-fill-available;
+	padding: 16px 10px;
+	font-size: 16px;
+	border: 1px solid var(--color-black);
+	color: var(--color-black);
+	border-radius: 7px;
+
+	&:focus {
+		outline: none;
+		border-color: var(--color-aqua);
+		box-shadow: 0 0 0 3px var(--color-aqua);
+	}
+
+	&::placeholder {
+		color: var(--color-black);
+	}
+}
+
+textarea {
+	height: 240px;
+}
+
 select {}
 
 input[type="number"]::-webkit-inner-spin-button,

@@ -205,6 +205,138 @@ const singleServiceStylesOptions = {
   write: false,
 };
 
+// Configuración para proyects.scss
+const proyectsStylesOptions = {
+  entryPoints: ["public/src/styles/proyects.scss"],
+  bundle: true,
+  outfile: "public/css/proyects.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-proyects-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile("public/css/proyects.css", cssFile.contents);
+              console.log("✅ public/css/proyects.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/proyects.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
+// Configuración para about.scss
+const aboutStylesOptions = {
+  entryPoints: ["public/src/styles/about.scss"],
+  bundle: true,
+  outfile: "public/css/about.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-about-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile("public/css/about.css", cssFile.contents);
+              console.log("✅ public/css/about.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/about.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
+// Configuración para contact.scss
+const contactStylesOptions = {
+  entryPoints: ["public/src/styles/contact.scss"],
+  bundle: true,
+  outfile: "public/css/contact.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-contact-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile("public/css/contact.css", cssFile.contents);
+              console.log("✅ public/css/contact.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/contact.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
 // Función de build
 async function build() {
   try {
@@ -213,16 +345,25 @@ async function build() {
       const homeCtx = await esbuild.context(homeStylesOptions);
       const servicesCtx = await esbuild.context(servicesStylesOptions);
       const singleServiceCtx = await esbuild.context(singleServiceStylesOptions);
+      const proyectsCtx = await esbuild.context(proyectsStylesOptions);
+      const aboutCtx = await esbuild.context(aboutStylesOptions);
+      const contactCtx = await esbuild.context(contactStylesOptions);
       await ctx.watch();
       await homeCtx.watch();
       await servicesCtx.watch();
       await singleServiceCtx.watch();
-      console.log("👀 Vigilando cambios en app.ts, home.scss, services.scss y single-service.scss...");
+      await proyectsCtx.watch();
+      await aboutCtx.watch();
+      await contactCtx.watch();
+      console.log("👀 Vigilando cambios en app.ts, home.scss, services.scss, single-service.scss, proyects.scss, about.scss y contact.scss...");
     } else {
       await esbuild.build(buildOptions);
       await esbuild.build(homeStylesOptions);
       await esbuild.build(servicesStylesOptions);
       await esbuild.build(singleServiceStylesOptions);
+      await esbuild.build(proyectsStylesOptions);
+      await esbuild.build(aboutStylesOptions);
+      await esbuild.build(contactStylesOptions);
       console.log("✅ Build completado");
     }
   } catch (error) {

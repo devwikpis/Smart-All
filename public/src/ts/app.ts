@@ -9,6 +9,8 @@ import "../styles/style.scss";
 // Import components
 import { MobileMenu, DropdownMenu, Accessibility } from "./components";
 import "./components/Swipers";
+import AOS from "aos";
+import "aos/dist/aos.css";
 /**
  * Initialize application
  */
@@ -37,6 +39,7 @@ class App {
     new MobileMenu();
     new DropdownMenu();
     new Accessibility();
+    AOS.init();
   }
 }
 

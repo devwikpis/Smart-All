@@ -1,0 +1,63 @@
+@use '../../../abstracts/mixins' as *;
+
+.contact-form {
+    padding: 60px 0;
+    background-color: var(--color-gray);
+
+
+    &__wrapper {
+        @include flex(row, center, center, 30px);
+
+        @include table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        @include desktop {
+            grid-template-columns: 1fr 40%;
+        }
+    }
+
+    &__texts {
+        padding: 10px 0;
+        @include flex(column, start, start, 10px);
+    }
+
+    &__header {
+        @include flex(column, center, start, 10px);
+    }
+
+    &__content {}
+
+    &__figure {
+        @include table {
+            @include bg-figure;
+        }
+
+        img {
+            border-radius: 7px;
+        }
+    }
+
+    .wpcf7 {
+        &-form {
+            display: grid;
+            gap: 20px;
+            grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
+
+            @include table {
+                grid-template-columns: 1fr 1fr;
+
+            }
+        }
+
+        &-response-output {
+            margin: 0 !important;
+
+            @include table {
+                grid-column: 1 / span 2;
+            }
+        }
+    }
+}

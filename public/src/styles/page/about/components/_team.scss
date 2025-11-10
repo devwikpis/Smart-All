@@ -1,0 +1,54 @@
+@use '../../../abstracts/mixins' as *;
+
+.team {
+
+    padding: 60px 0;
+
+    &__wrapper {}
+
+    &__header {
+        margin-bottom: 40px;
+        @include flex(column, center, center, 20px);
+        text-align: center;
+    }
+
+    &__h2 {}
+
+    &__p {}
+
+    &__card {
+        padding: 20px;
+        @include flex(column, center, center, 10px);
+        border-radius: 7px;
+        text-align: center;
+        background-color: var(--color-gray);
+    }
+
+    &__icon {
+        margin-bottom: 20px;
+    }
+
+    &__figure {
+        img {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+    }
+
+    &__h3 {
+        font-weight: 500;
+    }
+
+    &__span {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    &__texts--p {
+        font-size: 14px;
+    }
+
+}

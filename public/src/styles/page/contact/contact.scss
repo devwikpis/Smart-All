@@ -1,0 +1,103 @@
+@use '../../abstracts/mixins' as *;
+
+.full-contact {
+    padding: 60px 0;
+
+    &__wrapper {
+        display: grid;
+        gap: 20px;
+
+        @include table {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__left {
+        .wpcf7 {
+            &-form {
+                margin-top: 20px;
+                display: grid;
+                gap: 20px;
+
+                @include table {
+                    grid-template-areas: "a a" "b c" "d d" "e e" "f f" "g g";
+
+                    p {
+                        &:nth-child(2) {
+                            grid-area: a;
+                        }
+
+                        &:nth-child(3) {
+                            grid-area: b;
+                        }
+
+                        &:nth-child(4) {
+                            grid-area: c;
+                        }
+
+                        &:nth-child(5) {
+                            grid-area: d;
+                        }
+
+                        &:nth-child(6) {
+                            grid-area: e;
+                        }
+
+                        &:nth-child(7) {
+                            grid-area: f;
+
+                            input[type="submit"] {
+                                width: 100%;
+                            }
+                        }
+
+                        &:nth-child(8) {
+                            grid-area: g;
+
+
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 20px;
+        display: grid;
+        gap: 20px;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        gap: 20px;
+
+        &--icon {
+            padding: 10px;
+            border-radius: 7px;
+            background-color: #96DBE3C2;
+        }
+
+        &--info {}
+
+        &--title {
+            font-size: 1.13rem;
+            font-weight: 500;
+        }
+
+        &--cta {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .section-banner {
+        height: auto;
+        overflow: hidden;
+        margin-top: 20px;
+        border-radius: 7px;
+    }
+}
