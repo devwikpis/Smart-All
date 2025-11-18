@@ -5,7 +5,7 @@
      <div class="service-cards__wrapper max-width">
          <div class="service-cards__texts">
              <h2 class="h3 service-cards__h2"><?php echo get_the_title($service->ID); ?></h2>
-             <p class="p service-cards__p"><?php echo get_the_excerpt($service->ID); ?></p>
+             <h3 class="p service-cards__p"><?php echo get_the_excerpt($service->ID); ?></h3>
              <a href="<?php echo get_the_permalink($service->ID); ?>" class="button button--aqua service-cards__cta">Más información</a>
          </div>
          <figure class="service-cards__image">

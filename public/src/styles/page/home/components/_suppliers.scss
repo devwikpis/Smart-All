@@ -3,29 +3,14 @@
 .suppliers {
     padding: 60px 0;
 
-    .suppliers__wrapper.max-width {
-
-
-
-        .swiper-suppliers.g-swiper {
-
-            .swiper-wrapper {
-
-                .swiper-slide {}
-            }
-
-            .swiper-pagination {}
-        }
-    }
-
     &__texts {
         margin-bottom: 40px;
         @include flex(column, center, center, 15px);
         text-align: center;
 
-        h2.h2.suppliers__h2 {}
-
-        p.p.suppliers__p {}
+        @include table {
+            margin-bottom: 50px;
+        }
     }
 
     &__card {

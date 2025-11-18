@@ -7,7 +7,7 @@ if ($testimonials) {
             <div class="testimonials__texts">
                 <div class="testimonials__texts--content">
                     <h2 class="h2 testimonials__h2"><?php echo $testimonials['title']; ?></h2>
-                    <p class="p testimonials__p"><?php echo $testimonials['description']; ?></p>
+                    <h3 class="p testimonials__p"><?php echo $testimonials['description']; ?></h3>
                     <div class="testimonials__inner-arrows">
                         <button class="testimonials__arrow testimonials__arrow--prev"><svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.8036 20.625L0.98214 10.8036L10.8036 0.982177" stroke="#222322" stroke-width="1.96429" stroke-linecap="round" stroke-linejoin="round" />
@@ -33,8 +33,8 @@ if ($testimonials) {
                                 <div class="testimonials__card--top">
                                     <img class="testimonials__card--img" src="<?php echo $testimonial['image']['url']; ?>" alt="<?php echo $testimonial['image']['alt']; ?>">
                                     <div class="testimonials__card--texts">
-                                        <h3 class="h3 testimonials__card--h3"><?php echo $testimonial['name']; ?></h3>
-                                        <p class="p testimonials__card--p"><?php echo $testimonial['position']; ?></p>
+                                        <h2 class="h3 testimonials__card--h3"><?php echo $testimonial['name']; ?></h2>
+                                        <h3 class="p testimonials__card--p"><?php echo $testimonial['position']; ?></h3>
                                     </div>
                                 </div>
                                 <div class="testimonials__card--bottom">

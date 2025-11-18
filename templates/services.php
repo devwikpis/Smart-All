@@ -36,7 +36,7 @@ get_header(); ?>
             <div class="steps__wrapper max-width">
                 <div class="steps__header">
                     <h2 class="h2 steps__h2"><?php echo $steps['title'] ?></h2>
-                    <p class="p steps__p"><?php echo $steps['description'] ?></p>
+                    <h3 class="p steps__p"><?php echo $steps['description'] ?></h3>
                 </div>
                 <ul class="steps__list">
                     <?php foreach ($steps['step'] as $index => $step) { ?>

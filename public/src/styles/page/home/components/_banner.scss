@@ -6,6 +6,20 @@
     min-height: 500px;
     display: flex;
     align-items: center;
+    overflow: hidden;
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: white;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.44) 51%, rgba(9, 9, 121, 0) 100%);
+
+        @include table {
+            background: radial-gradient(circle, rgba(63, 94, 251, 0) 0%, rgba(0, 0, 0, 0.33) 100%);
+        }
+
+
+    }
 
     img {
         position: absolute;
@@ -66,7 +80,4 @@
         }
     }
 
-    &__p {}
-
-    a.button.button--aqua.banner__cta {}
 }

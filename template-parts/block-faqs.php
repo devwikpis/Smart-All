@@ -10,7 +10,7 @@
              <?php foreach ($acf['faqs'] as $index => $faq) { ?>
                  <details class="faqs__item">
                      <summary class="faqs__item--summary">
-                         <h3 class="h3 faqs__item--h3"><?php echo $faq['ask']; ?></h3>
+                         <h2 class="h3 faqs__item--h3"><?php echo $faq['ask']; ?></h2>
                          <span class="faqs__item--span">
                              <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M0.5 0.500001L5.5 5.5L10.5 0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />

@@ -33,7 +33,7 @@ class Starter_Admin
                 'capability' => 'edit_posts',
                 'redirect'   => false,
                 'icon_url'   => 'dashicons-admin-generic',
-                'position'   => 60
+                'position'   => 90
             ],
             'header' => [
                 'page_title' => __('Header Options', 'starter'),

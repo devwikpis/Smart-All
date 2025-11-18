@@ -15,11 +15,12 @@ get_header(); ?>
     if ($banner) {
     ?>
         <section class="banner bg-full" style="background-image: url(<?php echo $banner['image']['url']; ?>);">
+            <div class="banner__overlay"></div>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/banner-bars.svg" alt="Lineas de color">
             <div class="banner__wrapper max-width">
                 <div class="banner__texts">
                     <h1 class="h1 banner__h1"><?php echo $banner['title']; ?></h1>
-                    <p class="p banner__p"><?php echo $banner['description']; ?></p>
+                    <h2 class="p banner__h2"><?php echo $banner['description']; ?></h2>
                     <a href="<?php echo $banner['cta']['url']; ?>" target="<?php echo $banner['cta']['target']; ?>" class="button button--aqua banner__cta"><?php echo $banner['cta']['title']; ?></a>
                 </div>
             </div>
@@ -33,7 +34,7 @@ get_header(); ?>
             <div class="services__wrapper max-width">
                 <div class="services__texts">
                     <h2 class="h2 services__h2"><?php echo $services['title']; ?></h2>
-                    <p class="p services__p"><?php echo $services['description']; ?></p>
+                    <h3 class="p services__p"><?php echo $services['description']; ?></h3>
                 </div>
                 <div class="swiper-services g-swiper">
                     <div class="swiper-wrapper">
@@ -43,8 +44,8 @@ get_header(); ?>
                                     <span class="services__icon">
                                         <?php echo $service['icon']; ?>
                                     </span>
-                                    <h3 class="h3 services__h3"><?php echo $service['title']; ?></h3>
-                                    <p class="p services__p"><?php echo $service['description']; ?></p>
+                                    <h2 class="h3 services__h3"><?php echo $service['title']; ?></h2>
+                                    <h3 class="p services__p"><?php echo $service['description']; ?></h3>
                                 </div>
                             </div>
                         <?php } ?>
@@ -64,7 +65,7 @@ get_header(); ?>
                 <div class="about__content">
                     <div class="about__texts">
                         <h2 class="h2 about__h2"><?php echo $about['title']; ?></h2>
-                        <p class="p about__p"><?php echo $about['description']; ?></p>
+                        <h3 class="p about__p"><?php echo $about['description']; ?></h3>
                     </div>
                     <ul class="about__list">
                         <?php foreach ($about['blocks'] as $index => $card) { ?>
@@ -99,7 +100,7 @@ get_header(); ?>
             <div class="proyects__wrapper max-width">
                 <div class="proyects__texts">
                     <h2 class="h2 proyects__h2"><?php echo $proyects['title']; ?></h2>
-                    <p class="p proyects__p"><?php echo $proyects['description']; ?></p>
+                    <h3 class="p proyects__p"><?php echo $proyects['description']; ?></h3>
                 </div>
                 <div class="swiper-proyects g-swiper">
                     <div class="swiper-wrapper">

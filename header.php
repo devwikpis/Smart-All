@@ -61,7 +61,7 @@
                     }
 
                     if ($schedule && isset($schedule['url']) && isset($schedule['title'])) {
-                        echo '<a href="' . esc_url($schedule['url']) . '" target="_blank" class="header__schedule button button--br-white">' . esc_html($schedule['title']) . '</a>';
+                        echo '<a href="' . esc_url($schedule['url']) . '" target="_blank" class="header__schedule header__schedule--desktop button button--br-white">' . esc_html($schedule['title']) . '</a>';
                     }
                 }
                 ?>
@@ -76,6 +76,21 @@
                     'menu_class'     => 'header__nav-list',
                     'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>'
                 ]);
+
+                // Schedule button for mobile menu
+                $menu_locations = get_nav_menu_locations();
+                $menu_id = isset($menu_locations['menu_primary']) ? $menu_locations['menu_primary'] : 0;
+
+                if ($menu_id) {
+                    $schedule = get_field('schedule', 'term_' . $menu_id);
+                    if (!$schedule) {
+                        $schedule = get_field('schedule', 'nav_menu_' . $menu_id);
+                    }
+
+                    if ($schedule && isset($schedule['url']) && isset($schedule['title'])) {
+                        echo '<a href="' . esc_url($schedule['url']) . '" target="_blank" class="header__schedule header__schedule--mobile button button--br-white">' . esc_html($schedule['title']) . '</a>';
+                    }
+                }
                 ?>
             </nav>
         </header>

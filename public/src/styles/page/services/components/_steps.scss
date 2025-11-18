@@ -26,7 +26,13 @@
 
     &__h2 {}
 
-    &__p {}
+    &__p {
+        text-align: center;
+
+        @include table {
+            text-align: left;
+        }
+    }
 
     &__list {
         margin-top: 40px;

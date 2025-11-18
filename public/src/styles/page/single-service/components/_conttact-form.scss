@@ -6,7 +6,7 @@
 
 
     &__wrapper {
-        @include flex(row, center, center, 30px);
+        @include flex(column, center, center, 30px);
 
         @include table {
             display: grid;
@@ -26,6 +26,16 @@
 
     &__header {
         @include flex(column, center, start, 10px);
+        text-align: center;
+        margin-bottom: 20px;
+
+        @include table {
+            text-align: left;
+        }
+    }
+
+    &__p {
+        width: 100%;
     }
 
     &__content {}

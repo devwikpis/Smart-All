@@ -5,8 +5,8 @@
     z-index: 100;
     padding: 10px;
     background-color: var(--color-black);
+
     color: var(--color-white);
-    box-shadow: 0px 5.35px 28.21px 0px #00000078;
 
     &--home {
         background-color: transparent;
@@ -84,6 +84,28 @@
                 &:nth-child(3) {
                     transform: rotate(-45deg) translate(7px, -7px);
                 }
+            }
+        }
+    }
+
+    // Schedule button
+    &__schedule {
+        &--desktop {
+            display: none;
+
+            @include desktop {
+                display: inline-block;
+            }
+        }
+
+        &--mobile {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+
+            @include desktop {
+                display: none;
             }
         }
     }
