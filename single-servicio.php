@@ -18,26 +18,54 @@ get_header();
                     <h1 class="info-service__h1 p"><?php echo $info_service['title']; ?></h1>
                     <div class="content info-service__content"><?php echo $info_service['description']; ?></div>
                     <a href="<?php echo $info_service['cta']['url']; ?>" target="<?php echo $info_service['cta']['target']; ?>" class="button button--aqua"><?php echo $info_service['cta']['title']; ?></a>
-                </div>
-                <figure class="info-service__figure">
-                    <?php echo process_image($info_service['featured_image']); ?>
-                </figure>
-            </div>
-            <div class="info-service__slide max-width">
-                <div class="swiper-service g-swiper">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($info_service['gallery'] as $slide) { ?>
-                            <div class="swiper-slide">
-                                <figure class="info-service__slide--figure">
-                                    <?php echo process_image($slide['image']); ?>
-                                    <p class="p info-service__slide--p"><?php echo $slide['text']; ?></p>
-                                </figure>
+                    <div class="info-service__slide">
+                        <div class="swiper-service g-swiper">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($info_service['gallery'] as $slide) { ?>
+                                    <div class="swiper-slide">
+                                        <figure class="info-service__slide--figure">
+                                            <?php echo process_image($slide['image']); ?>
+                                            <p class="p info-service__slide--p"><?php echo $slide['text']; ?></p>
+                                        </figure>
+                                    </div>
+                                <?php } ?>
                             </div>
-                        <?php } ?>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
+                <?php $type = $info_service['type_media'];
+                if ($type == 'feature_image') { ?>
+                    <figure class="info-service__figure">
+                        <?php echo process_image($info_service['featured_image']); ?>
+                    </figure>
+                <?php } elseif ($type == 'video') { ?>
+                    <div class="info-service__video">
+                        <video class="info-service__video-player" src="<?php echo $info_service['video']; ?>"></video>
+                        <button class="info-service__video-play" aria-label="Reproducir video">
+                            <svg width="102" height="122" viewBox="0 0 102 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_511_5074)">
+                                    <path d="M9.1001 105.399V16.1116C9.1001 10.55 15.2733 7.20949 19.9291 10.2517L89.0296 55.4037C93.2839 58.1835 93.2514 64.4275 88.9686 67.163L19.8681 111.298C15.2085 114.274 9.1001 110.928 9.1001 105.399Z" fill="white" fill-opacity="0.84" shape-rendering="crispEdges" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_d_511_5074" x="9.72748e-05" y="-0.000391006" width="101.301" height="121.511" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset />
+                                        <feGaussianBlur stdDeviation="4.55" />
+                                        <feComposite in2="hardAlpha" operator="out" />
+                                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_511_5074" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_511_5074" result="shape" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                <?php } ?>
             </div>
+
+
         </section>
     <?php }
     $benefits = get_field('benefits');

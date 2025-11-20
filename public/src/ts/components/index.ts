@@ -6,3 +6,4 @@
 export { MobileMenu } from "./MobileMenu";
 export { DropdownMenu } from "./DropdownMenu";
 export { Accessibility } from "./Accessibility";
+export { VideoPlayer } from "./VideoPlayer";

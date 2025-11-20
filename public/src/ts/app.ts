@@ -7,7 +7,7 @@
 import "../styles/style.scss";
 
 // Import components
-import { MobileMenu, DropdownMenu, Accessibility } from "./components";
+import { MobileMenu, DropdownMenu, Accessibility, VideoPlayer } from "./components";
 import "./components/Swipers";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -39,6 +39,7 @@ class App {
     new MobileMenu();
     new DropdownMenu();
     new Accessibility();
+    new VideoPlayer();
     AOS.init();
   }
 }
