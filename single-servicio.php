@@ -15,7 +15,7 @@ get_header();
         <section class="info-service">
             <div class="info-service__wrapper max-width">
                 <div class="info-service__texts">
-                    <h1 class="info-service__h1 p"><?php echo $info_service['title']; ?></h1>
+                    <h1 class="info-service__h1 h2"><?php echo $info_service['title']; ?></h1>
                     <div class="content info-service__content"><?php echo $info_service['description']; ?></div>
                     <a href="<?php echo $info_service['cta']['url']; ?>" target="<?php echo $info_service['cta']['target']; ?>" class="button button--aqua"><?php echo $info_service['cta']['title']; ?></a>
                     <div class="info-service__slide">

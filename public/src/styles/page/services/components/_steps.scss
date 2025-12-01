@@ -39,6 +39,10 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 20px;
+
+        @include table {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
     }
 
     &__item {

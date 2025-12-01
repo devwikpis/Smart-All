@@ -164,7 +164,7 @@
 		margin-block-end: 0.67em;
 		margin-inline-start: 0px;
 		margin-inline-end: 0px;
-		font-weight: bold;
+		font-weight: 600;
 		line-height: 2.13rem;
 	}
 
@@ -174,7 +174,16 @@
 		margin-block-end: 0.83em;
 		margin-inline-start: 0px;
 		margin-inline-end: 0px;
-		font-weight: bold;
+		font-weight: 500;
+		font-size: 1.25rem;
+
+		@include table {
+			font-size: 1.38rem;
+		}
+
+		@include desktop {
+			font-size: 1.56rem;
+		}
 	}
 
 	h3 {
@@ -183,7 +192,7 @@
 		margin-block-end: 1em;
 		margin-inline-start: 0px;
 		margin-inline-end: 0px;
-		font-weight: bold;
+		font-weight: 500;
 	}
 
 	h4 {
@@ -192,7 +201,7 @@
 		margin-block-end: 1em;
 		margin-inline-start: 0px;
 		margin-inline-end: 0px;
-		font-weight: bold;
+		font-weight: 500;
 	}
 
 	h5 {
@@ -201,7 +210,7 @@
 		margin-block-end: 1.67em;
 		margin-inline-start: 0px;
 		margin-inline-end: 0px;
-		font-weight: bold;
+		font-weight: 500;
 	}
 
 	h6 {
@@ -210,7 +219,7 @@
 		margin-block-end: 2.33em;
 		margin-inline-start: 0px;
 		margin-inline-end: 0px;
-		font-weight: bold;
+		font-weight: 500;
 	}
 
 	ol {

@@ -1,5 +1,35 @@
 @use '../../../abstracts/mixins' as *;
 
+.full-projects {
+    &__pagination {
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        span {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+
+            svg {
+                width: 30px;
+                height: 15px;
+            }
+        }
+
+        &-btn {
+            &.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
 .proyect-card {
     padding: 60px 0;
     background-color: var(--color-white);

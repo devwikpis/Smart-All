@@ -16,7 +16,14 @@
 
     &__texts {}
 
-    &__h1 {}
+    &__h1 {
+        font-size: 1.38rem;
+        font-weight: 600;
+
+        @include desktop {
+            font-size: 1.56rem;
+        }
+    }
 
     &__content {}
 
