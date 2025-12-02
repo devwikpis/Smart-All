@@ -1,14 +1,16 @@
  <?php $proyect = $args['proyect'];
     $index = $args['index'];
     $proyect_fields = get_field('page_info', $proyect->ID);
+    $tag_title = $args['tag_title'] ?? 'h2';
+    $tag_sub_title = $args['tag_sub_title'] ?? 'h3';
     ?>
 
  <section class="proyect-card <?php echo $index % 2 == 0 ? '' : 'proyect-card--reverse'; ?>">
      <div class="proyect-card__wrapper max-width">
          <div class="proyect-card__container">
              <div class="proyect-card__top">
-                 <h2 class="h2 proyect-card__h2"><?php echo get_the_title($proyect->ID); ?></h2>
-                 <h3 class="h3 proyect-card__h3"><?php echo $proyect_fields['sub_title']; ?></h3>
+                 <<?php echo $tag_title; ?> class="h2 proyect-card__h2"><?php echo get_the_title($proyect->ID); ?></<?php echo $tag_title; ?>>
+                 <<?php echo $tag_sub_title; ?> class="h3 proyect-card__h3"><?php echo $proyect_fields['sub_title']; ?></<?php echo $tag_sub_title; ?>>
                  <div class="proyect-card__content content"><?php echo $proyect_fields['first_content']; ?></div>
              </div>
              <figure class="proyect-card__image">

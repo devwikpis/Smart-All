@@ -13,10 +13,6 @@
         display: grid;
         gap: 10px;
 
-        @include table {
-            grid-template-columns: 1fr 1fr;
-            column-gap: 40px;
-        }
     }
 
     &__item {
@@ -35,10 +31,6 @@
         &--span {
             transition: transform 0.3s ease-in-out;
         }
-
-        &--item {}
-
-        &--content {}
 
         &[open] {
             .faqs {

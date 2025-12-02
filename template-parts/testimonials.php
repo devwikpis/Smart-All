@@ -1,5 +1,7 @@
 <?php
-$testimonials = get_field('testimonials', 'option');
+
+$testimonials = $args['acf'] ?? get_field('testimonials', 'option');
+
 if ($testimonials) {
 ?>
     <section class="testimonials">
@@ -31,7 +33,7 @@ if ($testimonials) {
                         <div class="swiper-slide">
                             <div class="testimonials__card">
                                 <div class="testimonials__card--top">
-                                    <img class="testimonials__card--img" src="<?php echo $testimonial['image']['url']; ?>" alt="<?php echo $testimonial['image']['alt']; ?>">
+                                    <img class="testimonials__card--img" src="<?php echo $testimonial['image']['url'] ?? get_template_directory_uri(); ?>/assets/avatar.png" alt="<?php echo $testimonial['image']['alt'] ?? $testimonial['name']; ?>">
                                     <div class="testimonials__card--texts">
                                         <h2 class="h3 testimonials__card--h3"><?php echo $testimonial['name']; ?></h2>
                                         <h3 class="p testimonials__card--p"><?php echo $testimonial['position']; ?></h3>

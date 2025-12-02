@@ -20,7 +20,9 @@ get_header(); ?>
                 'posts_per_page' => 3,
                 'paged' => $paged,
                 'orderby' => 'date',
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'status' => 'publish',
+                'post_status' => 'publish'
             );
 
             $proyectos_query = new WP_Query($args);

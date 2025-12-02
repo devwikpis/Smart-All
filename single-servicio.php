@@ -110,7 +110,10 @@ get_header();
             <?php echo $info_banner['full_content'] ?>
         </div>
     <?php }
-    get_template_part('template-parts/testimonials');
+    $testimonials = get_field('testimonials');
+    if ($testimonials) {
+        get_template_part('template-parts/testimonials', null, ['acf' => $testimonials['testimonials']]);
+    }
     $service_faqs = get_field('faqs')['faqs'];
     if ($service_faqs) {
         get_template_part('template-parts/block-faqs', null, ['acf' => $service_faqs]);

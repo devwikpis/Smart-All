@@ -93,6 +93,17 @@ class Starter_Public
                 'all'
             );
         }
+
+        // Encolar estilos de single-proyect solo en el single de proyecto
+        if (is_singular('proyecto')) {
+            wp_enqueue_style(
+                'single-proyect-css',
+                STARTER_DIR_URI . 'public/css/single-proyect.css',
+                array('public-css'),
+                $this->version,
+                'all'
+            );
+        }
     }
 
 

@@ -182,7 +182,10 @@ const singleServiceStylesOptions = {
             );
 
             if (cssFile) {
-              await fs.writeFile("public/css/single-service.css", cssFile.contents);
+              await fs.writeFile(
+                "public/css/single-service.css",
+                cssFile.contents
+              );
               console.log("✅ public/css/single-service.css generado");
             }
 
@@ -337,6 +340,53 @@ const contactStylesOptions = {
   write: false,
 };
 
+// Configuración para single-proyect.scss
+const singleProyectStylesOptions = {
+  entryPoints: ["public/src/styles/single-proyect.scss"],
+  bundle: true,
+  outfile: "public/css/single-proyect.css",
+  minify: isProd,
+  sourcemap: !isProd,
+  plugins: [
+    sassPlugin({
+      type: "css",
+    }),
+    {
+      name: "extract-single-proyect-css",
+      setup(build) {
+        build.onEnd(async (result) => {
+          if (result.outputFiles) {
+            const cssFile = result.outputFiles.find((f) =>
+              f.path.endsWith(".css")
+            );
+
+            if (cssFile) {
+              await fs.writeFile(
+                "public/css/single-proyect.css",
+                cssFile.contents
+              );
+              console.log("✅ public/css/single-proyect.css generado");
+            }
+
+            if (!isProd) {
+              const cssMapFile = result.outputFiles.find((f) =>
+                f.path.endsWith(".css.map")
+              );
+              if (cssMapFile) {
+                await fs.writeFile(
+                  "public/css/single-proyect.css.map",
+                  cssMapFile.contents
+                );
+              }
+            }
+          }
+        });
+      },
+    },
+  ],
+  write: false,
+};
+
 // Función de build
 async function build() {
   try {
@@ -344,10 +394,15 @@ async function build() {
       const ctx = await esbuild.context(buildOptions);
       const homeCtx = await esbuild.context(homeStylesOptions);
       const servicesCtx = await esbuild.context(servicesStylesOptions);
-      const singleServiceCtx = await esbuild.context(singleServiceStylesOptions);
+      const singleServiceCtx = await esbuild.context(
+        singleServiceStylesOptions
+      );
       const proyectsCtx = await esbuild.context(proyectsStylesOptions);
       const aboutCtx = await esbuild.context(aboutStylesOptions);
       const contactCtx = await esbuild.context(contactStylesOptions);
+      const singleProyectCtx = await esbuild.context(
+        singleProyectStylesOptions
+      );
       await ctx.watch();
       await homeCtx.watch();
       await servicesCtx.watch();
@@ -355,7 +410,10 @@ async function build() {
       await proyectsCtx.watch();
       await aboutCtx.watch();
       await contactCtx.watch();
-      console.log("👀 Vigilando cambios en app.ts, home.scss, services.scss, single-service.scss, proyects.scss, about.scss y contact.scss...");
+      await singleProyectCtx.watch();
+      console.log(
+        "👀 Vigilando cambios en app.ts, home.scss, services.scss, single-service.scss, proyects.scss, about.scss, contact.scss y single-proyect.scss..."
+      );
     } else {
       await esbuild.build(buildOptions);
       await esbuild.build(homeStylesOptions);
@@ -364,6 +422,7 @@ async function build() {
       await esbuild.build(proyectsStylesOptions);
       await esbuild.build(aboutStylesOptions);
       await esbuild.build(contactStylesOptions);
+      await esbuild.build(singleProyectStylesOptions);
       console.log("✅ Build completado");
     }
   } catch (error) {

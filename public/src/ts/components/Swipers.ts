@@ -138,7 +138,7 @@ const swiperValues = new Swiper(".swiper-values", {
 
 const swiperTeam = new Swiper(".swiper-team", {
   spaceBetween: 30,
-
+  centeredSlides: true,
   breakpoints: {
     375: {
       slidesPerView: 1,
